@@ -1,0 +1,56 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! The featured header }}
+
+<header id="index-header" class="pure-g">
+	<figure id="blog-cover" style="{{#if @blog.cover}}background-image: url({{@blog.cover}}){{else}}background-image: url({{image}}){{/if}}"></figure>
+</header>
+
+<section class="max-width slick">
+
+{{#get "posts" limit="4" include="tags, author, image" filter="featured:true"}}
+{{#foreach posts}}
+
+	<article class="{{post_class}} featured-article pure-g">
+
+		<section class="pure-u-1 pure-u-md-1-2">
+			<div class="wrapper">
+				<a class="clean-a" href="{{url}}">
+					<figure style="background-image: url({{image}})"></figure>
+				</a>
+			</div>
+		</section>
+
+		<section class="pure-u-1 pure-u-md-1-2">
+			<div class="wrapper">
+
+				<header>
+					<h3><a class="clean-a" href="{{url}}">{{title}}</a></h3>
+				</header>
+
+				<section>
+					<p class="featured-excerpt">{{excerpt words="50"}} <span class="smaller">[&hellip;]</span></p>
+				</section>
+
+				<footer>
+					<p class="featured-meta smaller">{{author}} <span class="tag-prefix">/</span> <time class="post-date" datetime="{{date format=" YYYY-MM-DD "}}">{{date format="DD MMMM YYYY"}}</time> <span class="tag-prefix">/</span> {{tags separator="<span class='tag-prefix'><br>/ </span>"}}</p>
+				</footer>
+
+			</div>
+		</section>
+
+	</article>
+
+{{/foreach}}
+{{/get}}
+
+</section>
+
+{{!-- The main content area on the homepage --}}
+<main class="content max-width" role="main">
+
+	{{! The tag below includes the post loop - partials/loop.hbs }}
+	{{> "loop"}}
+
+</main>

@@ -1,0 +1,66 @@
+{{!-- Previous/next page links - only displayed on page 2+ --}}
+<section class="pure-g">
+  <div class="pure-u-1">
+    {{pagination}}
+  </div>
+</section>
+
+{{!-- This is the post loop - each post will be output using this markup --}}
+  <section class="loop-list pure-g">
+
+  {{#foreach posts from="1" to="2"}}
+
+  <article class="{{post_class}} loop-article">
+    <div class="wrapper">
+
+      <a class="clean-a" href="{{url}}">
+        <figure style="background-image: url({{image}})"></figure>
+      </a>
+
+      <header>
+          <h6><a class="clean-a" href="{{url}}">{{title}}</a></h6>
+      </header>
+
+      <section>
+          <p>{{excerpt words="40"}} <span class="smaller">[&hellip;]</span></p>
+      </section>
+
+      <footer>
+          <p class="smaller">
+            {{author}} <span class="tag-prefix">/</span> <time class="post-date" datetime="{{date format=" YYYY-MM-DD "}}">{{date format="DD MMMM YYYY"}}</time> <span class="tag-prefix">/</span> {{tags separator="<span class='tag-prefix'> / </span>"}}
+          </p>
+      </footer>
+
+    </div>
+  </article>
+
+  {{/foreach}}
+
+  {{#foreach posts from="3" to="6"}}
+    
+  <article class="{{post_class}} loop-article">
+    <div class="wrapper">
+
+      <header>
+          <h6><a class="clean-a" href="{{url}}">{{title}}</a></h6>
+      </header>
+
+      <section>
+          <p>{{excerpt words="28"}} <span class="smaller">[&hellip;]</span></p>
+      </section>
+
+      <footer>
+          <p class="smaller">
+            {{author}} <span class="tag-prefix">/</span> <time class="post-date" datetime="{{date format=" YYYY-MM-DD "}}">{{date format="DD MMMM YYYY"}}</time> <span class="tag-prefix">/</span> {{tags separator="<span class='tag-prefix'> / </span>"}}
+          </p>
+      </footer>
+
+    </div>
+  </article>
+
+  {{/foreach}}
+
+  </section>
+
+{{!-- Previous/next page links - displayed on every page --}}
+{{pagination}}

@@ -1,0 +1,55 @@
+/* Util */
+
+.clearfix:after
+  content: ""
+  display: table
+  clear: both
+
+.max-width
+  max-width: 980px
+  margin: 0 auto
+
+.max-width-modal
+  position: fixed
+  max-width: 600px
+  width: 100%
+  left: 50%
+  top: 50%
+  transform: translateX(-50%) translateY(-50%)
+  transition: all 1s ease
+  z-index: 1000
+
+.smaller
+  font-size: 1.2rem
+
+.show
+  opacity: 1
+  transition: opacity 0.3s ease
+
+.hide
+  opacity: 0
+  transition: opacity 0.3s ease
+
+.expanded
+  height: 180px
+  transition: height 0.3s ease 
+
+.minified
+  height: 70px
+  transition: height 0.3s ease
+
+.visible
+  visibility: visible
+
+.hidden
+  visibility: hidden
+
+.clean-a
+  border: none
+  &:hover
+    background: none
+
+.read-more
+  color: $text-color
+  &:hover
+    color: $primary-color

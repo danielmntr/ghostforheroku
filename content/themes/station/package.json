@@ -1,0 +1,30 @@
+{
+  "name": "StationtoStation",
+  "version": "0.9",
+  "description": "Ghost Theme",
+  "author": "Daniel Monteiro",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielmntr/ghost-theme"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "auto-prefixer": "^0.4.2",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.11.2",
+    "image-webpack-loader": "^3.2.0",
+    "node-sass": "^4.4.0",
+    "postcss-loader": "^1.2.2",
+    "sass-loader": "^4.1.1",
+    "script-loader": "^0.7.0",
+    "style-loader": "^0.13.1",
+     "webpack": "^2.2.1"
+  },
+  "config": {
+    "posts_per_page": 6
+  },
+  "dependencies": {
+    "resolve-url-loader": "^2.1.0"
+  }
+}

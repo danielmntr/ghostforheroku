@@ -1,0 +1,28 @@
+{{! featured posts}}
+<section id="sidebar-feat">
+{{#get "posts" limit="3" filter="featured:true"}}
+    {{#foreach posts}}
+    <article>
+        <a href="{{url}}"><h6>{{title}}</h6></a>
+        <p>{{excerpt words="15"}} [&hellip;]</p>
+    </article> 
+    {{/foreach}}
+    {{else}}
+{{/get}}
+</section>
+
+{{! latest posts}}
+<section id="sidebar-posts">
+    <article>
+        <h6>Latest Articles</h6>
+
+        {{#get "posts" limit="10" filter="featured:false"}}
+        {{#foreach posts}}
+
+        <a style="position:relative" href="{{url}}"><p>&mdash; {{title}}</p></a>
+
+        {{/foreach}}
+        {{/get}}
+        
+    </article> 
+</section>

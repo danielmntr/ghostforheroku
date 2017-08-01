@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  {{! Document settings and metadata }}
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>{{meta_title}}</title>
+  <meta name="designer" content="Daniel Monteiro" />
+  <meta name="keywords" content="ghost, blog, {{meta_title}}" />
+
+  {{! Robots and Viewport }}
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {{! OpenGraph for Facebook }}
+  <meta property="og:title" content="{{meta_title}}" />
+  <meta property="og:locale" content="en_US" />
+
+  {{! Twitter Card }}
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="{{meta_title}}" />
+
+  {{! Icons }}
+  <link rel="icon" href="{{asset "favicon.ico"}}" />
+
+  {{! Prerendering and Prefetching }}
+  <link rel="dns-prefetch" href="//fonts.googleapis.com/" />
+
+  {{! Scripts and Stylesheets }}
+  <link rel="stylesheet" type="text/css" href="{{asset "dist/styles.css"}}">
+
+  {{! Page-Specific Metadata }}
+  {{{block "meta"}}}
+
+  {{! blog head code injection }}
+  {{ghost_head}}
+
+</head>
+<body class="{{body_class}}">
+
+  {{! The blog's top navigation }}
+  {{navigation}}
+
+  {{! The body of the page (index/post/page) goes here }}
+  <div id="content">
+    {{{body}}}
+  </div>
+
+  {{! The blog's footer }}
+  <footer id="footer" class="pure-g">
+    <div class="pure-u-1 max-width">
+
+      <a href="#content" class="arctic_scroll" data-offset="-400">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M15.5 12.5c-0.4 0.4-1 0.5-1.6 0l-3.9-3.7-3.9 3.7c-0.5 0.5-1.1 0.4-1.6 0-0.4-0.4-0.4-1.2 0-1.6 0.4-0.4 4.7-4.5 4.7-4.5 0.2-0.2 0.5-0.3 0.8-0.3s0.6 0.1 0.8 0.3c0 0 4.3 4.1 4.7 4.5s0.4 1.2 0 1.6z"/></svg>
+      </a>
+
+      <p class="copyright"><span>Made by <strong>{{@blog.title}}</strong>.</span> <span>Powered by Ghost.</span></p>
+
+      <a class="clean-a" href="{{twitter_url}}">
+            <svg class="twitter" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20"><path d="M10 0.4c-5.3 0-9.6 4.3-9.6 9.6s4.3 9.6 9.6 9.6 9.6-4.3 9.6-9.6-4.3-9.6-9.6-9.6zM13.9 8.3c0 0.1 0 0.2 0 0.2 0 2.5-1.9 5.4-5.4 5.4-1.1 0-2.1-0.3-2.9-0.8 0.1 0 0.3 0 0.5 0 0.9 0 1.7-0.3 2.3-0.8-0.8 0-1.5-0.6-1.8-1.3 0.1 0 0.2 0 0.4 0 0.2 0 0.3 0 0.5-0.1-0.9-0.2-1.5-0.9-1.5-1.9v0c0.3 0.1 0.5 0.2 0.9 0.2-0.5-0.3-0.8-0.9-0.8-1.6 0-0.3 0.1-0.7 0.3-1 0.9 1.1 2.3 1.9 3.9 2 0-0.1 0-0.3 0-0.4 0-1 0.8-1.9 1.9-1.9 0.5 0 1 0.2 1.4 0.6 0.4-0.1 0.8-0.2 1.2-0.5-0.1 0.4-0.4 0.8-0.8 1 0.4 0 0.7-0.1 1.1-0.3-0.3 0.4-0.6 0.7-0.9 1z"/></svg>
+            <span class="hidden">Twitter</span>
+          </a>
+
+          <a class="clean-a" href="{{facebook_url}}">
+            <svg class="facebook" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20"><path d="M10 0.4c-5.3 0-9.6 4.3-9.6 9.6s4.3 9.6 9.6 9.6 9.6-4.3 9.6-9.6-4.3-9.6-9.6-9.6zM12.3 7h-1.4c-0.2 0-0.4 0.2-0.4 0.5v1h1.8l-0.3 1.5h-1.5v4.5h-1.7v-4.5h-1.5v-1.5h1.5v-0.9c0-1.3 0.9-2.3 2.1-2.3h1.4v1.6z"/></svg>
+            <span class="hidden">Facebook</span>
+          </a>
+
+    </div>
+  </footer>
+
+  {{! jQuery }}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  {{! Webpack assets }}
+  <script type="text/javascript" src="{{asset "dist/bundle.js"}}"></script>
+
+  {{! blog footer code injection }}
+  {{ghost_foot}}
+
+</body>
+</html>

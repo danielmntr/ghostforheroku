@@ -1,0 +1,70 @@
+{{!< default}}
+
+{{!-- This is a page template. A page outputs content just like any other post, and has all the same attributes by default, but you can also customise it to behave differently if you prefer. --}}
+
+{{!-- Everything inside the #post tags pulls data from the page --}}
+{{#post}}
+
+{{! Post Header }}
+<header id="post-head" class=" {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+</header>
+
+{{! Post Content }}
+<main id="content" class="content max-width" role="main">
+  
+  <article class="{{post_class}} pure-g">
+    
+    {{! Post Title }}
+    <section id="post-title" class="pure-u-1">
+      <div class="wrapper">
+        <span class="pure-u-1 pure-u-md-1-4"></span>
+        <h1 class="pure-u-1 pure-u-md-1-2">{{title}}</h1>
+      </div>
+    </section>
+
+    {{! Post Meta }}
+    <section id="post-meta" class="pure-u-1 pure-u-md-1-4">
+      <div class="wrapper">
+
+        {{> post-meta}}
+
+      </div>
+    </section>
+
+    <section id="post-content" class="pure-u-1 pure-u-md-1-2">
+      <div class="wrapper">
+
+        <section class="output">
+
+          {{! Outputs the post content}}
+          {{content}}
+        </section>
+        
+        
+        <section id="comments">
+          <h3>Comments</h3>
+          <div id="disqus_thread"></div>
+        </section>
+
+      </div>
+    </section>
+
+    {{! Post Sidebar }}
+    <section id="post-related" class="pure-u-1 pure-u-md-1-4">
+      <div class="wrapper">
+
+        {{> post-sidebar}}
+
+      </div>
+    </section>
+
+  </article>
+
+</main>
+
+{{! Links to Previous/Next posts}}
+
+{{> next-prev}}
+
+
+{{/post}}

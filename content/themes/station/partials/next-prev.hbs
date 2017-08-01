@@ -1,0 +1,27 @@
+<section id="navigation" class="hide">
+
+    <nav class="nav-reveal">
+
+        {{#prev_post}}
+        <a class="prev" href="{{url}}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M12.5 4.5c0.4 0.4 0.5 1 0 1.6l-3.7 3.9 3.7 3.9c0.5 0.5 0.4 1.1 0 1.6-0.4 0.4-1.2 0.4-1.6 0-0.4-0.4-4.5-4.7-4.5-4.7-0.2-0.2-0.3-0.5-0.3-0.8s0.1-0.6 0.3-0.8c0 0 4.1-4.3 4.5-4.7s1.2-0.4 1.6 0z"/></svg>
+            <div>
+                <h6>{{title}}</h6>
+                <p>by {{#author}}{{name}}{{/author}}</p>
+            </div>
+        </a>
+        {{/prev_post}}
+
+        {{#next_post}}
+        <a class="next" href="{{url}}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M9.2 4.5c0.4 0.4 4.5 4.7 4.5 4.7 0.2 0.2 0.3 0.5 0.3 0.8s-0.1 0.6-0.3 0.8c0 0-4.1 4.3-4.5 4.7-0.4 0.4-1.2 0.4-1.6 0-0.4-0.4-0.5-1 0-1.6l3.7-3.9-3.7-3.9c-0.5-0.5-0.4-1.1 0-1.6s1.2-0.4 1.6 0z"/></svg>
+            <div>
+                <h6>{{title}}</h6>
+                <p>by {{#author}}{{name}}{{/author}}</p>
+            </div>
+        </a>
+        {{/next_post}}
+
+    </nav>
+
+</section>

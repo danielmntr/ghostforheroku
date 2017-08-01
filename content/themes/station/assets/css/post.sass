@@ -1,0 +1,120 @@
+/* Post */
+
+#post-head
+  height: 40vh
+  width: 100%
+  max-width: 1920px
+  overflow: hidden
+  background: 0 0 no-repeat fixed
+  background-size: cover
+  margin: 0 auto
+  margin-bottom: 3em
+  border-bottom: 3em $secondary-color solid  
+
+#post-title
+  h2
+    text-align: center
+
+#post-meta
+  span
+    font-family: $secondary-font
+    @extend .smaller
+  .post-meta-author, .post-meta-date, .post-meta-tags
+    display: block
+
+  .tag-prefix
+    color: $primary-color
+  
+  #meta-share
+    margin: 1em 0
+    a 
+      display: block
+      position: relative
+      height: 30px
+      svg
+        position: absolute
+        margin-top: 0
+        top: 0
+        left: 0
+        fill: $text-color
+        transition: fill .5s ease
+        &:hover
+          fill: $primary-color
+        #share-i
+          fill: $bg-color
+      span 
+        font-family: $secondary-font
+        font-size: smaller
+        position: absolute
+        top: 50%
+        left: 35px
+        transform: translateY(-50%)
+        transition: opacity .3s ease-out
+      .twitter:hover
+        fill: #1DA1F2
+      .facebook:hover
+        fill: #3B579D
+      .google:hover
+        fill: #C13C31
+      .linkedin:hover
+        fill: #0177B5
+      .youtube:hover
+        fill: #E62117
+      .share-link
+        transition: opacity .5s ease-in-out
+
+@media screen and (max-width: 48em)
+  #post-meta
+    text-align: center
+  #meta-share
+     display: none
+
+#post-content
+  box-sizing: border-box
+  section
+    margin-bottom: 6rem
+  .output
+    a
+      font-weight: 900
+    iframe
+      max-width: 100%
+  #comments
+    text-align: center
+    h3
+      font-family: $primary-font
+
+@media screen and (min-width: 48em)
+  .output
+    p:first-of-type::first-letter
+      font-size: 10rem
+      font-weight: 900
+      line-height: 5.7rem
+      float: left
+      text-transform: uppercase
+      margin: 1.6rem .8rem 0 0
+
+#post-related
+  padding: 0 1em
+  font-size: smaller
+  #sidebar-feat
+    h6
+      line-height: 1.9em
+  #sidebar-posts
+  article
+    position: relative
+    margin-bottom: 2em
+    h6
+      font-size: 1em
+      line-height: 1.9em
+      &:hover
+        color: #111
+    p
+      font-family: $secondary-font
+      line-height: 1.85em
+      margin-bottom: .5em
+
+@keyframes color-arrow
+  0%, 100%
+    fill: $bg-color
+  50%
+    fill: $primary-color
